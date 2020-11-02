@@ -4,7 +4,7 @@ Los propósitos de este repositorio es crear un programa que descarge los vídeo
 
 Otros objetivos a implementar para aprender:
 
-* Uso de [format strings].
+* (+) Uso de [format strings].
 
 * Uso de [type checking].
 
@@ -14,7 +14,7 @@ Otros objetivos a implementar para aprender:
 
 * Crear tests unitarios con [pytest].
 
-* Implementar CI con GitHub actions.
+* Implementar CI con [GitHub actions].
 
 
 [format strings]: https://realpython.com/python-f-strings/
@@ -22,3 +22,4 @@ Otros objetivos a implementar para aprender:
 [Documentación]: https://realpython.com/documenting-python-code/
 [pycodestyle]: https://pycodestyle.pycqa.org/en/latest/
 [pytest]: https://realpython.com/pytest-python-testing/
+[GitHub actions]: https://docs.github.com/en/free-pro-team@latest/actions/guides/building-and-testing-python

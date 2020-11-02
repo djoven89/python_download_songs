@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
 from os import path, remove, mkdir, chdir
@@ -25,7 +24,7 @@ def convert_mp3(song_name: str):
 def download_song(s: object, s_size: int, s_format: str, s_long: str, s_short: str):
     """Función que se encarga de descargar la canción"""
 
-    print("\nDescargando la canción:", s_short)
+    print(f"\nDescargando la canción: {s_short}")
 
     if not path.exists(song_dest):
         mkdir(song_dest)
@@ -39,11 +38,11 @@ def download_song(s: object, s_size: int, s_format: str, s_long: str, s_short: s
     try:
         s.download(song_dest, filename=s_short)
     except Exception as e:
-        print("Hubo un error al descargar el archivo, error:\n\t", e)
+        print(f"Hubo un error al descargar el archivo, error:\n\t {e}")
         exit(1)
 
     if path.exists(s_long) and path.getsize(s_long) == s_size:
-        print("Canción descargada con éxito en formato:", s_format)
+        print(f"Canción descargada con éxito en formato: {s_format}")
     else:
         print("La canción no se descargó con éxito. Pudo haber sido porque el tamaño no concuerda.")
         exit(1)
@@ -81,7 +80,7 @@ def get_playlist(song_url: str) -> str:
     try:
         pl = Playlist(song_url)
     except Exception as e:
-        print("Hubo un error al procesar la URL del vídeo:\n\t", e)
+        print(f"Hubo un error al procesar la URL del vídeo:\n\t {e}")
         exit(1)
 
     song = []
@@ -97,7 +96,7 @@ def get_song(song_url: any) -> object:
     try:
         yt = YouTube(song_url)
     except Exception as e:
-        print("Hubo un error al procesar la URL del vídeo:\n\t", e)
+        print(f"Hubo un error al procesar la URL del vídeo:\n\t {e}")
         exit(1)
 
     song = yt.streams.get_audio_only()
